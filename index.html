@@ -3,8 +3,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="lepingu generaator.js"></script>
 </head>
 <body>
-    
+    <div id="lepingu andmed">
+        <div id="kliendi andmed">
+            <form action="/lepingu generaator.js">
+                <input type="text" placeholder="eesnimi" name="nimi">
+                <input type="text" placeholder="perekonnanimi" name="perenimi">
+                <input type="text" placeholder="telefon" name="kontakt">
+                <input type="number" placeholder="konto number" name="kontonum">
+                <input type="checkbox" placeholder="juriidiline isik" name="juriidilineIsik">
+                <input type="checkbox" placeholder="registratsiooni number/isikukood" name="regNr">
+            </form>
+        </div>
+        <div id="tingimused">
+            <form action="/lepingu generaator.js">
+                <input type="number" placeholder="laenatav summa" name="summa">
+                <input type="number" placeholder="intress" name="intress">
+                <input type="date-time" placeholder="maksuperiood" name="maksuPeriood">
+                <input type="number" placeholder="viivis" name="viive">
+                <input type="date-time" placeholder="sõlmimise kuupäev" name="solmimiseKp">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
