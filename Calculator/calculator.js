@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { render } from "react-dom";
 import TextField from "@material-ui/core/TextField";
-import TextField from "@material-ui/core/Button";
+import Button from "@material-ui/core/Button";
+import form from "@material-ui/core/form";
+import div from "@material-ui/core/div";
 
 const CompundInterest = () => {
   const [amount, setAmount] = useState();
   const [weeks, setWeeks] = useState();
   const [interest, setInterest] = useState();
-  const [result, setResult] = useState();
+  let [result, setResult] = useState();
 
   const calculate = () => {
     // A=p(1+(r/n))^(nt)
-    const result = amount * Math.pow(1 + interest, weeks);
+    result = amount * Math.pow(1 + interest, weeks);
     setResult(amount, toFixed(2));
   };
+
+  render();
   return (
     <div
       style={{
@@ -33,13 +37,13 @@ const CompundInterest = () => {
         <TextField
           label="How many weeks?"
           variant="outlined"
-          onChange={(e) => setWeeks(e.targer.value)}
+          onChange={(e) => setWeeks(e.target.value)}
         />
         <TextField
           label="Weekly Interest rate?"
           variant="outlined"
           type="number"
-          onChange={(e) => setInterest(e.targer.value / 100)}
+          onChange={(e) => setInterest(e.target.value / 100)}
         />
         <br />
         <br />
@@ -55,10 +59,10 @@ const CompundInterest = () => {
         </Button>
         <br />
         <br />
-        <div style={{ fontSize: "30px" }}>€{result}</div>
+        <div style={{ fontSize: "30px" }}>"€"+${result}</div>
       </form>
     </div>
   );
 };
 
-render(<CompundInterest />, document.querySelector("#root"));
+ReactDOM.render(<CompundInterest />, document.querySelector("FirstApp"));
