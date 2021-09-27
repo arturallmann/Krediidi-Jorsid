@@ -1,11 +1,13 @@
 const { appendFileSync } = require("fs");
 var mysql = require("mysql");
+var express = require("express");
+var app = express();
 
 var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "Passw0rd",
-  database: "arvutitehnik",
+  database: "krediidijorsid",
 });
 
 connection.connect(function (err) {
