@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { render } from "react-dom";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import form from "@material-ui/core/form";
-import div from "@material-ui/core/div";
+var React, { useState }= require("react");
+var { render } = require("react-dom");
+var TextField = require("@material-ui/core/TextField");
+var Button = require("@material-ui/core/Button");
+// import form from "@material-ui/core/form";
+// import div from "@material-ui/core/div";
 
 const CompundInterest = () => {
   const [amount, setAmount] = useState();
