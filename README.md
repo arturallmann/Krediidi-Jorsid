@@ -1,1 +1,0 @@
-# Krediidi-Jorsid
