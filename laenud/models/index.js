@@ -41,7 +41,7 @@ db.Client = sequelize.models.Client
 
 import Loan from "./loan.js"
 Loan(sequelize)
-db.Client = sequelize.models.Loan
+db.Loan = sequelize.models.Loan
 
 db.Loan.belongsTo(db.Client);
 db.Client.hasMany(db.Loan);

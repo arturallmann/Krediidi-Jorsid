@@ -1,4 +1,4 @@
-import { DataTypes } from "sequelize/types";
+import { DataTypes } from "sequelize";
 
 export default function(sequelize) {
     return sequelize.define('Client', {
@@ -7,7 +7,7 @@ export default function(sequelize) {
             allowNull: false
         },
         perenimi: {
-            tpye: DataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         kontakt: {
