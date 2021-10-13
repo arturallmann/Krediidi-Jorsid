@@ -1,4 +1,4 @@
-import { DataTypes } from "sequelize/types";
+import { DataTypes } from "sequelize";
 
 export default function(sequelize) {
     return sequelize.define('Loan', {
