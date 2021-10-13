@@ -1,7 +1,3 @@
-// let clients = [
-//     {"id":0, "nimi":"lappa", "perenimi":"kotte", "kontakt":"vaata selja taha janist edasi"},
-//     {"id":1, "nimi":"kan", "perenimi":"jängsepp", "kontakt":"vaata selja taha"}
-// ];
 
 export default function handler(req, res) {
     switch(req.method) {
@@ -18,7 +14,7 @@ function actionView(req, res) {
 }
 
 function actionUpdate(req, res) {
-    res.status(200).json(clients)
+    res.status(200).json(loans)
 }
 function actionDelete(req, res) {
     res.status(200).json(clients)

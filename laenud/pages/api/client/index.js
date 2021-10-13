@@ -1,20 +1,20 @@
-let clients = [
-    {"id":0, "nimi":"lappa", "perenimi":"kotte", "kontakt":"vaata selja taha janist edasi"},
-    {"id":1, "nimi":"kan", "perenimi":"jängsepp", "kontakt":"vaata selja taha"}
-];
+import db from '../../../models'
 
 export default function handler(req, res) {
     switch(req.method) {
-        case "GET": actionView(req, res)
-        case "POST": actionAdd(req, res)
+        case "GET": actionList(req, res); break;
+        case "POST": actionCreate(req, res); break;
         default: res.status(405)
     }
 }
 
-function actionView(req, res) {
-    res.status(200).json(clients)
+async function actionList(req, res) {
+    const models = await db.Client.findAll();
+    res.status(200)/json(models)
 }
 
-function actionAdd(req, res) {
-    res.status(200).json(clients)
+async function actionCreate(req, res) {
+    let model = db.Client.build(req.body);
+    await model.save();
+    res.status(201).json(model);
 }

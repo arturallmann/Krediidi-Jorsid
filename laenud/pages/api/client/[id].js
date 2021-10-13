@@ -1,21 +1,19 @@
-let clients = [
-    {"id":0, 
-    "nimi":"lappa", 
-    "perenimi":"kotte", 
-    "kontakt":"vaata selja taha janist edasi", 
-    "kontonum": "EE12 000001",
-    "juriidilineIsik": false
-},
+// let clients = [
+//     {"id":0, 
+//     "nimi":"lappa", 
+//     "perenimi":"kotte", 
+//     "kontakt":"vaata selja taha janist edasi", 
+//     "kontonum": "EE12 000001",
+//     "juriidilineIsik": false
+// },
 
-    {"id":1, 
-    "nimi":"kan", 
-    "perenimi":"jängsepp", 
-    "kontakt":"vaata selja taha",
-    "kontonum": "EE12 000002",
-    "juriidilineIsik": true, 
-    "regNr": "133742069"
-}
-];
+//     {"id":1, 
+//     "nimi":"kan", 
+//     "perenimi":"jängsepp", 
+//     "kontakt":"vaata selja taha",
+//     "kontonum": "EE12 000002",
+//     "juriidilineIsik": false}
+// ];
 
 export default function handler(req, res) {
     switch(req.method) {
