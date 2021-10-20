@@ -60,7 +60,7 @@ module.exports = {
         type: Sequelize.DATE      },
       paymentPeriod: {
         allowNull: false,
-        type: Sequelize.INTEGER      }
+        type: Sequelize.INTEGER      },
     });
   },
   down: async (queryInterface, Sequelize) => {
