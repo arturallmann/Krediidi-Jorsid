@@ -9,7 +9,6 @@ module.exports = {
         type: Sequelize.INTEGER      },
       firstName: {
         allowNull: false,
-        allowNull: false,
         type: Sequelize.STRING      },
       lastName: {
         allowNull: false,
@@ -33,10 +32,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER      },
       amount: {
+        allowNull: false,
         type: Sequelize.INTEGER      },
       interest: {
+        allowNull: false,
         type: Sequelize.INTEGER      },
       penalty: {
+        allowNull: false,
         type: Sequelize.INTEGER      },
       createdAt: {
         allowNull: false,

@@ -2,31 +2,27 @@ import { DataTypes } from "sequelize";
 
 export default function(sequelize) {
     return sequelize.define('Loan', {
-        klientId: {
+        clientId: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        summa: {
+        amount: {
             type: DataTypes.DECIMAL(12, 4),
             allowNull: false
         },
-        intress: {
+        interest: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        viive: {
+        penalty: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        solmimiseKp: {
+        createdAt: {
             type: DataTypes.DATE,
             allowNull: false
         },
-        laenuLeping: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        maksuPeriood: {
+        paymentPeriod: {
             type: DataTypes.STRING,
             allowNull: false
         }
