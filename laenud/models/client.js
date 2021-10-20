@@ -2,29 +2,30 @@ import { DataTypes } from "sequelize";
 
 export default function(sequelize) {
     return sequelize.define('Client', {
-        nimi: {
+        firstName: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        perenimi: {
+        lastName: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        kontakt: {
+        contact: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        kontonum: {
+        accountnum: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        juriidilineIsik: {
+        corporation: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
             allowNull: false
         },
         regNr: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         }
 
     })
