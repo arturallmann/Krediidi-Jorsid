@@ -1,11 +1,15 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Clients', {
+    await queryInterface.createTable('Client', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
+        // references: {
+        //   model: "Loan",
+        //   key: "id"
+        // },
         type: Sequelize.INTEGER      },
       firstName: {
         allowNull: false,
@@ -22,15 +26,26 @@ module.exports = {
       corporation: {
         allowNull: false,
         type: Sequelize.BOOLEAN    },
-        regNr: {
-          allowNull: false,
-          type: Sequelize.STRING     }
+      regNr: {
+        allowNull: false,
+        type: Sequelize.STRING     },
     });
-    await queryInterface.createTable('Loans', {
+    await queryInterface.createTable('Loan', {
+      id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+      },
       clientId: {
         allowNull: false,
-        primaryKey: true,
-        type: Sequelize.INTEGER      },
+        type: Sequelize.INTEGER,
+        foreignKey: true,
+        references: {
+          model: "Client",
+          key: "id"
+        }
+      },
       amount: {
         allowNull: false,
         type: Sequelize.INTEGER      },
