@@ -10,12 +10,12 @@ export default function handler(req, res) {
 }
 
 function actionView(req, res) {
-    res.status(200).json(clients.filter(c=>c.id==req.query.id))
+    res.status(200).json(Loans.filter(c=>c.id==req.query.id))
 }
 
 function actionUpdate(req, res) {
-    res.status(200).json(loans)
+    res.status(200).json(Loans)
 }
 function actionDelete(req, res) {
-    res.status(200).json(clients)
+    res.status(200).json(Loans)
 }

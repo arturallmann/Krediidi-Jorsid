@@ -1,35 +1,6 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Client', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        // references: {
-        //   model: "Loan",
-        //   key: "id"
-        // },
-        type: Sequelize.INTEGER      },
-      firstName: {
-        allowNull: false,
-        type: Sequelize.STRING      },
-      lastName: {
-        allowNull: false,
-        type: Sequelize.STRING      },
-      contact: {
-        allowNull: false,
-        type: Sequelize.STRING      },
-      accountnum: {
-        allowNull: false,
-        type: Sequelize.INTEGER      },
-      corporation: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN    },
-      regNr: {
-        allowNull: false,
-        type: Sequelize.STRING     },
-    });
     await queryInterface.createTable('Loan', {
       id: {
         allowNull: false,
@@ -62,9 +33,42 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER      },
     });
+    ClientId.hasMany(Loan);
+    await queryInterface.createTable('Client', {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        references: {
+          
+          model: "Loan",
+          key: "id"
+        },
+        type: Sequelize.INTEGER      },
+      firstName: {
+        allowNull: false,
+        type: Sequelize.STRING      },
+      lastName: {
+        allowNull: false,
+        type: Sequelize.STRING      },
+      contact: {
+        allowNull: false,
+        type: Sequelize.STRING      },
+      accountnum: {
+        allowNull: false,
+        type: Sequelize.INTEGER      },
+      corporation: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN    },
+      regNr: {
+        allowNull: false,
+        type: Sequelize.STRING     },
+
+    });
+    
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Clients');
-    await queryInterface.dropTable('Loans');
+    await queryInterface.dropTable('Client');
+    await queryInterface.dropTable('Loan');
   }
 };

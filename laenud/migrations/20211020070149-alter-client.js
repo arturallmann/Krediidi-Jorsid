@@ -8,12 +8,14 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.update('Client', {
-      firstName: {
-        value: klient.eesnimi
-      }
-    })
+    // get data to client from klient database table
+    // await queryInterface.update('Client', {
+    //   firstName: {
+    //     value: klient.nimi
+    //   }
+    // })
   },
+
 
   down: async (queryInterface, Sequelize) => {
     /**

@@ -27,12 +27,12 @@ export default function handler(req, res) {
 }
 
 function actionView(req, res) {
-    res.status(200).json(clients.filter(c=>c.id==req.query.id))
+    res.status(200).json(Client.filter(c=>c.id==req.query.id))
 }
 
 function actionUpdate(req, res) {
-    res.status(200).json(clients)
+    res.status(200).json(Client)
 }
 function actionDelete(req, res) {
-    res.status(200).json(clients)
+    res.status(200).json(Client)
 }

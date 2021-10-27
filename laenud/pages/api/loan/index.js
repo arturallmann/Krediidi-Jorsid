@@ -12,9 +12,9 @@ export default function handler(req, res) {
 }
 
 function actionView(req, res) {
-    res.status(200).json(clients)
+    res.status(200).json(Loans)
 }
 
 function actionAdd(req, res) {
-    res.status(200).json(clients)
+    res.status(200).json(Loans)
 }

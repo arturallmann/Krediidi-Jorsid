@@ -10,11 +10,11 @@ export default function handler(req, res) {
 
 async function actionList(req, res) {
     const models = await db.Client.findAll();
-    res.status(200)/json(models)
+    res.status(200).json(models)
 }
 
 async function actionCreate(req, res) {
     let model = db.Client.build(req.body);
     await model.save();
-    res.status(201).json(model);
+    res.status(201).json(models);
 }
