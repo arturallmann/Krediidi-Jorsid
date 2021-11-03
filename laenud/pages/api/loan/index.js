@@ -1,4 +1,4 @@
-import Loan from '../../../models/loan.js'
+import db from '../../../models'
 // let clients = [
 //     {"id":0, "nimi":"lappa", "perenimi":"kotte", "kontakt":"vaata selja taha janist edasi"},
 //     {"id":1, "nimi":"kan", "perenimi":"jängsepp", "kontakt":"vaata selja taha"}
@@ -16,6 +16,16 @@ function actionView(req, res) {
     res.status(200).json(Loan)
 }
 
-function actionAdd(req, res) {
-    res.status(200).json(Loan)
+async function actionCreate(req, res) {
+    const body = JSON.parse(req.body)
+    let model = db.Client.build(body( {
+        firstName: req.query.firstName
+    }));
+    await model.save()
+        .then(function(model){
+            
+            res.status(201).json(model);
+        }).catch(function (err) {
+            res.status(500).json(err.errors);
+        });
 }

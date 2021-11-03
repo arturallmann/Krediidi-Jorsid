@@ -14,7 +14,15 @@ async function actionList(req, res) {
 }
 
 async function actionCreate(req, res) {
-    let model = db.Client.build(req.body);
-    await model.save();
-    res.status(201).json(models);
+    // const body = JSON.parse(req.body)
+    let model = db.Client.build(req.body, {
+        firstName: req.query.firstName
+    });
+    await model.save()
+        .then(function(model){
+            
+            res.status(201).json(model);
+        }).catch(function (err) {
+            res.status(500).json(err.errors);
+        });
 }

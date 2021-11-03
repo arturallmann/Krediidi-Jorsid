@@ -23,7 +23,9 @@ async function actionView(req, res) {
         res.status(200).json(model)
 }
 async function actionCreate(req, res) {
-    let model = db.Client.build(req.body);
+    let model = db.Client.build(req.body, {
+        firstName: req.query.firstName
+    });
     await model.save()
         .then(function(model){
             
