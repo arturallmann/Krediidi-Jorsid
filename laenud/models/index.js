@@ -45,4 +45,13 @@ db.Loan = sequelize.models.Loan
 
 db.Loan.belongsTo(db.Client);
 db.Client.hasMany(db.Loan);
+// db.Loan.belongsTo(db.Client, {
+//   foreignKey: 'id'
+// });
+// db.Client.hasMany(db.Loan, {
+//   constraints: false,
+//   foreignKey: 'id',
+//   sourceKey: 'clientId'
+// });
+// module.exports = db;
 module.exports = db;

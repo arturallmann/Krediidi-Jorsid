@@ -1,35 +1,37 @@
-// let clients = [
-//     {"id":0, 
-//     "nimi":"lappa", 
-//     "perenimi":"kotte", 
-//     "kontakt":"vaata selja taha janist edasi", 
-//     "kontonum": "EE12 000001",
-//     "juriidilineIsik": false
-// },
-
-//     {"id":1, 
-//     "nimi":"kan", 
-
-//     "perenimi":"jängsepp", 
-//     "kontakt":"vaata selja taha",
-//     "kontonum": "EE12 000002",
-//     "juriidilineIsik": false}
-// ];
+import db from '../../../models'
 
 export default function handler(req, res) {
     switch(req.method) {
-        case "GET": actionView(req, res)
-        case "POST":
-        case "PUT": actionUpdate(req, res)
-        case "DELETE": actionDelete(req, res)
-        default: res.status(405)
+        case "GET": actionView(req, res); break;
+        case "POST": actionCreate(req, res); break;
+        case "PUT": actionUpdate(req, res); break;
+        case "DELETE": actionDelete(req, res); break;
+        default: res.status(405); break;
     }
 }
 
-function actionView(req, res) {
-    res.status(200).json(Client.filter(c=>c.id==req.query.id))
+async function actionView(req, res) {
+    let model = await db.Client.findOne({
+        where: {
+            id: req.query.id
+        }
+    });
+    console.log(model)
+    if(!model)
+        res.status(404).json({error: "not found"})
+    else 
+        res.status(200).json(model)
 }
-
+async function actionCreate(req, res) {
+    let model = db.Client.build(req.body);
+    await model.save()
+        .then(function(model){
+            
+            res.status(201).json(model);
+        }).catch(function (err) {
+            res.status(500).json(err.errors);
+        });
+}
 function actionUpdate(req, res) {
     res.status(200).json(Client)
 }

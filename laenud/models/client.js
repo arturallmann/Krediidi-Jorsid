@@ -30,6 +30,7 @@ export default function(sequelize) {
 
     },
     {
-        tableName: "client"
+        tableName: "client",
+        timestamps: false
     })
 }
