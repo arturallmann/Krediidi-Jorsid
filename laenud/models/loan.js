@@ -27,5 +27,9 @@ export default function(sequelize) {
             allowNull: false
         }
         
+    },
+    {
+        tableName: "loan",
+        timestamps: false
     })
 }

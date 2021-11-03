@@ -1,3 +1,4 @@
+import Loan from '../../../models/loan.js'
 // let clients = [
 //     {"id":0, "nimi":"lappa", "perenimi":"kotte", "kontakt":"vaata selja taha janist edasi"},
 //     {"id":1, "nimi":"kan", "perenimi":"jängsepp", "kontakt":"vaata selja taha"}
@@ -12,9 +13,9 @@ export default function handler(req, res) {
 }
 
 function actionView(req, res) {
-    res.status(200).json(Loans)
+    res.status(200).json(Loan)
 }
 
 function actionAdd(req, res) {
-    res.status(200).json(Loans)
+    res.status(200).json(Loan)
 }

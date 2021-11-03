@@ -28,5 +28,8 @@ export default function(sequelize) {
             allowNull: false
         }
 
+    },
+    {
+        tableName: "client"
     })
 }
