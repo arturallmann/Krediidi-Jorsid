@@ -17,10 +17,7 @@ function actionView(req, res) {
 }
 
 async function actionCreate(req, res) {
-    const body = JSON.parse(req.body)
-    let model = db.Client.build(body( {
-        firstName: req.query.firstName
-    }));
+    let model = db.Client.build(req.body);
     await model.save()
         .then(function(model){
             

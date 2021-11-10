@@ -32,8 +32,24 @@ async function actionCreate(req, res) {
             res.status(500).json(err.errors);
         });
 }
-function actionUpdate(req, res) {
-    res.status(200).json("")
+async function actionUpdate(req, res) {
+    const model = await db.Client.findOne({
+        limit: 1,
+        where: {
+            id: req.query.id
+        }
+    });
+    if (model) {
+        model.update(req.body)
+            .then(function(model){
+                res.status(201).json(model);
+            }).catch(function (err) {
+                //res.status(500).json(err);
+                res.status(500).json(err.errors);
+            });
+    } else {
+        res.status(404).json({message: "Instance not found"});
+    }
 }
 function actionDelete(req, res) {
     res.status(200).json("")
