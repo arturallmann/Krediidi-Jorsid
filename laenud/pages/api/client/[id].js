@@ -55,5 +55,15 @@ async function actionUpdate(req, res) {
 
 
 function actionDelete(req, res) {
-    res.status(200).json(Client)
+    db.Loan.destroy({
+        where: {
+            clientId: req.query.id
+        }
+    })
+    db.Client.destroy({
+        where :{
+            id: req.query.id
+        }
+    })
+    res.status(204).send();
 }

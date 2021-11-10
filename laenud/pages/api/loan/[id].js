@@ -52,5 +52,10 @@ async function actionUpdate(req, res) {
     }
 }
 function actionDelete(req, res) {
-    res.status(200).json("")
+    db.Client.destroy({
+        where :{
+            id: req.query.id
+        }
+    })
+    res.status(204).send();
 }
