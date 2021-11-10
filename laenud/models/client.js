@@ -25,12 +25,12 @@ export default function(sequelize) {
         },
         regNr: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
 
     },
     {
-        tableName: "client",
+        tableName: "Client",
         timestamps: false
     })
 }

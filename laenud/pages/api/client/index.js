@@ -15,9 +15,8 @@ async function actionList(req, res) {
 
 async function actionCreate(req, res) {
     // const body = JSON.parse(req.body)
-    let model = db.Client.build(req.body, {
-        firstName: req.query.firstName
-    });
+    console.log(req.body)
+    let model = db.Client.build(req.body);
     await model.save()
         .then(function(model){
             
