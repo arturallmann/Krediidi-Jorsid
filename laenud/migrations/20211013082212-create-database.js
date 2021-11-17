@@ -61,7 +61,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.BOOLEAN    },
       regNr: {
-        allowNull: true,
+        allowNull: false,
         type: Sequelize.STRING     },
 
     });

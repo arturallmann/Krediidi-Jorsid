@@ -6,23 +6,25 @@ import db from '../../../models'
 
 export default function handler(req, res) {
     switch(req.method) {
-        case "GET": actionView(req, res)
-        case "POST": actionAdd(req, res)
+        case "GET": actionList(req, res); break;
+        case "POST": actionCreate(req, res); break;
         default: res.status(405)
     }
 }
 
-function actionView(req, res) {
-    res.status(200).json(Loan)
+async function actionList(req, res) {
+    const models = await db.Loan.findAll();
+    res.status(200).json(models)
 }
 
+
 async function actionCreate(req, res) {
-    let model = db.Client.build(req.body);
+    let model = db.Loan.build(req.body);
     await model.save()
         .then(function(model){
             
             res.status(201).json(model);
         }).catch(function (err) {
-            res.status(500).json(err.errors);
+            res.status(500).json(err);
         });
 }

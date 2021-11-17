@@ -49,7 +49,7 @@ async function actionUpdate(req, res) {
                 res.status(500).json(err.errors);
             });
     } else {
-        res.status(404).json({message: "Instance not found"});
+        res.status(404).json({message: "ous a fag"});
     }
 }
 

@@ -15,7 +15,7 @@ export default function(sequelize) {
             allowNull: false
         },
         accountnum: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         },
         corporation: {

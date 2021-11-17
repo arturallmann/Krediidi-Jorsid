@@ -14,14 +14,12 @@ async function actionList(req, res) {
 }
 
 async function actionCreate(req, res) {
-    // const body = JSON.parse(req.body)
-    console.log(req.body)
     let model = db.Client.build(req.body);
     await model.save()
         .then(function(model){
             
             res.status(201).json(model);
         }).catch(function (err) {
-            res.status(500).json(err.errors);
+            res.status(500).json(err);
         });
 }

@@ -23,7 +23,7 @@ async function actionView(req, res) {
 
 }
 async function actionCreate(req, res) {
-    let model = db.Client.build(req.body);
+    let model = db.Loan.build(req.body);
     await model.save()
         .then(function(model){
             
@@ -33,7 +33,7 @@ async function actionCreate(req, res) {
         });
 }
 async function actionUpdate(req, res) {
-    const model = await db.Client.findOne({
+    const model = await db.Loan.findOne({
         limit: 1,
         where: {
             id: req.query.id
@@ -52,7 +52,7 @@ async function actionUpdate(req, res) {
     }
 }
 function actionDelete(req, res) {
-    db.Client.destroy({
+    db.Loan.destroy({
         where :{
             id: req.query.id
         }
