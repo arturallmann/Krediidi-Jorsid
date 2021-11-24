@@ -9,13 +9,12 @@ export default function handler(req, res) {
 }
 
 async function actionList(req, res) {
-    const models = await db.Loan.findAll();
+    const models = await db.Payment.findAll();
     res.status(200).json(models)
 }
 
-
 async function actionCreate(req, res) {
-    let model = db.Loan.build(req.body);
+    let model = db.Payment.build(req.body);
     await model.save()
         .then(function(model){
             
@@ -24,4 +23,3 @@ async function actionCreate(req, res) {
             res.status(500).json(err);
         });
 }
-

@@ -43,15 +43,12 @@ import Loan from "./loan.js"
 Loan(sequelize)
 db.Loan = sequelize.models.Loan
 
+import Payment from "./payment.js"
+Payment(sequelize)
+db.Payment = sequelize.models.Payment
+
 db.Loan.belongsTo(db.Client);
 db.Client.hasMany(db.Loan);
-// db.Loan.belongsTo(db.Client, {
-//   foreignKey: 'id'
-// });
-// db.Client.hasMany(db.Loan, {
-//   constraints: false,
-//   foreignKey: 'id',
-//   sourceKey: 'clientId'
-// });
-// module.exports = db;
+db.Loan.hasMany(db.Payment);
+
 module.exports = db;
