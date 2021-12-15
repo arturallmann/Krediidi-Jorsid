@@ -15,11 +15,29 @@ export default function Home() {
             <h1 className={styles.title}>
                 Start by taking a loan!
             </h1>
+          <div>
+           <form>
+            <label>
+              Your Name:
+             <input type="text" name="name"/>
+            </label>
+            <label>
+              Amount:
+             <input type="text" name="name" />
+            </label>
+            <label>
+              Name:
+             <input type="text" name="name" />
+            </label>
+            <label>
+              Name:
+             <input type="text" name="name" />
+            </label>
+           </form>
+          </div>
 
         
         </main>
-            
-        
         </div>
         )
     }

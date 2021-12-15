@@ -21,30 +21,17 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="/loan.js" className={styles.card}>
+          <a href="/loan" src="/loan.js" className={styles.card}>
             <h2>Take a loan &rarr;</h2>
             <p>Take a loan as much as you need! Interest depends on the amount you have loaned, 9%-30%</p>
           </a>
 
-          <a href="/pay.js" className={styles.card}>
+          <a href="/pay" src="/pay.js" className={styles.card}>
             <h2>Pay an existing loan &rarr;</h2>
             <p>Pay back the money you have loaned from our firm</p>
           </a>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
